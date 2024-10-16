@@ -1,0 +1,82 @@
+/* src/styles/styles.css */
+
+/* Estilo global */
+body {
+    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Navbar */
+  .navbar {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  .nav-link {
+    font-size: 1.1rem;
+    margin-right: 10px;
+  }
+  
+  .nav-link:hover {
+    color: #f39c12 !important;
+  }
+  
+  /* Carrinho (CartWidget) */
+  .cart-icon {
+    display: flex;
+    align-items: center;
+  }
+  
+  .cart-icon span {
+    margin-left: 5px;
+    font-weight: bold;
+  }
+  
+  /* ItemListContainer */
+  .container h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+  
+  /* Card de produto */
+  .card {
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  /* Botões */
+  button {
+    border-radius: 20px;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #f39c12 !important;
+    color: white;
+  }
+  
+  /* ItemCount */
+  button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }

@@ -1,0 +1,20 @@
+/* src/components/Banner.css */
+.banner {
+    height: 80vh;
+    background: url('https://via.placeholder.com/1600x800') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .overlay {
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+  
+  button {
+    border-radius: 25px;
+    padding: 10px 20px;
+  }
