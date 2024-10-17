@@ -2,14 +2,14 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Card, Container, Row, Col, Spinner } from 'react-bootstrap';
-import ItemCount from './ItemCount';
 
 const ItemDetail = ({ addToCart }) => {
-  const { id } = useParams();
+  const { id } = useParams(); // Obtemos o ID da URL
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // Simulação de chamada à API
     const fetchProduct = new Promise((resolve) => {
       setTimeout(() => {
         resolve({
@@ -27,12 +27,6 @@ const ItemDetail = ({ addToCart }) => {
       setLoading(false);
     });
   }, [id]);
-
-  const handleAdd = (quantity) => {
-    if (quantity > 0) {
-      addToCart(product, quantity);
-    }
-  };
 
   if (loading) {
     return (
@@ -56,7 +50,9 @@ const ItemDetail = ({ addToCart }) => {
               <Card.Title>{product.name}</Card.Title>
               <Card.Text>{product.description}</Card.Text>
               <Card.Text>R$ {product.price.toFixed(2)}</Card.Text>
-              <ItemCount stock={10} initial={1} onAdd={handleAdd} />
+              <button className="btn btn-success" onClick={() => addToCart(product, 1)}>
+                Adicionar ao Carrinho
+              </button>
             </Card.Body>
           </Card>
         </Col>

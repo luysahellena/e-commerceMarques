@@ -1,7 +1,7 @@
 /* src/components/Banner.css */
 .banner {
-    height: 80vh;
-    background: url('https://via.placeholder.com/1600x800') no-repeat center center/cover;
+    height: 100vh;
+    background: url('https://source.unsplash.com/1600x900/?whiskey') no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9,12 +9,29 @@
   }
   
   .overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Sobreposição escura */
+    padding: 50px;
+    border-radius: 10px;
     text-align: center;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    max-width: 800px;
+    width: 90%;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   }
   
-  button {
-    border-radius: 25px;
-    padding: 10px 20px;
+  .banner-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
   }
+  
+  .banner-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+  }
+  
+  .btn-lg {
+    padding: 15px 30px;
+    font-size: 1.25rem;
+    border-radius: 50px;
+  }
+  

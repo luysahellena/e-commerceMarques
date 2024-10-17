@@ -4,7 +4,7 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FaShoppingCart } from 'react-icons/fa';
 
-const NavBar = ({ cart }) => {
+const NavBar = ({ cart = [] }) => { 
   const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
@@ -17,8 +17,8 @@ const NavBar = ({ cart }) => {
             <Nav.Link as={Link} to="/">Home</Nav.Link>
             <Nav.Link as={Link} to="/catalog">Catálogo</Nav.Link>
           </Nav>
-          <div style={{ color: 'white' }}>
-            <FaShoppingCart />
+          <div className="d-flex align-items-center">
+            <FaShoppingCart size={24} className="text-white" />
             <span className="ms-2">{totalItems}</span>
           </div>
         </Navbar.Collapse>

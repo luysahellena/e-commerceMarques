@@ -1,16 +1,27 @@
-
-.products-container {
+/* src/components/ProductsShowcase.css */
+.products-showcase {
+    padding: 50px;
+    background-color: white;
+    text-align: center;
+  }
+  
+  .product-grid {
     display: flex;
-    justify-content: space-around;
-    margin: 50px 0;
+    justify-content: center;
+    gap: 20px;
   }
   
   .product-card {
-    width: 18rem;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
     text-align: center;
-    transition: transform 0.3s;
+    width: 200px;
   }
   
-  .product-card:hover {
-    transform: scale(1.05);
+  .product-card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
   }
+  
