@@ -1,24 +1,20 @@
 // src/components/ItemDetail.js
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Card, Container, Row, Col, Spinner } from 'react-bootstrap';
+import { Card, Button, Container, Spinner } from 'react-bootstrap';
+import { toast } from 'react-toastify'; // Importando o toast
+import products from '../data/Products.js'; // Importando a lista de produtos
 
 const ItemDetail = ({ addToCart }) => {
-  const { id } = useParams(); // Obtemos o ID da URL
+  const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulação de chamada à API
     const fetchProduct = new Promise((resolve) => {
       setTimeout(() => {
-        resolve({
-          id,
-          name: 'Whisky Black Label',
-          description: 'Um whisky refinado com sabor complexo.',
-          price: 199.99,
-          image: 'https://via.placeholder.com/300',
-        });
+        const foundProduct = products.find((item) => item.id === parseInt(id));
+        resolve(foundProduct);
       }, 1000);
     });
 
@@ -28,36 +24,34 @@ const ItemDetail = ({ addToCart }) => {
     });
   }, [id]);
 
+  const handleAddToCart = () => {
+    addToCart(product, 1);
+    toast.success(`${product.name} foi adicionado ao carrinho!`); // Exibe um toast
+  };
+
   if (loading) {
     return (
-      <div className="loading-container">
-        <Spinner animation="border" role="status">
-          <span className="visually-hidden">Loading...</span>
-        </Spinner>
-      </div>
+      <Container className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
+        <Spinner animation="border" />
+      </Container>
     );
   }
 
+  if (!product) {
+    return <p>Produto não encontrado.</p>;
+  }
+
   return (
-    <Container className="mt-5">
-      <Row>
-        <Col md={6}>
-          <Card.Img variant="top" src={product.image} />
-        </Col>
-        <Col md={6}>
-          <Card>
-            <Card.Body>
-              <Card.Title>{product.name}</Card.Title>
-              <Card.Text>{product.description}</Card.Text>
-              <Card.Text>R$ {product.price.toFixed(2)}</Card.Text>
-              <button className="btn btn-success" onClick={() => addToCart(product, 1)}>
-                Adicionar ao Carrinho
-              </button>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
+    <Card style={{ width: '24rem', margin: 'auto' }}>
+      <Card.Img variant="top" src={product.image} />
+      <Card.Body>
+        <Card.Title>{product.name}</Card.Title>
+        <Card.Text>R$ {product.price.toFixed(2)}</Card.Text>
+        <Button variant="success" onClick={handleAddToCart}>
+          Adicionar ao Carrinho
+        </Button>
+      </Card.Body>
+    </Card>
   );
 };
 

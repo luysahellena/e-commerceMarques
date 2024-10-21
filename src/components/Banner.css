@@ -1,12 +1,14 @@
 /* src/components/Banner.css */
 .banner {
-    height: 100vh;
-    background: url('https://source.unsplash.com/1600x900/?whiskey') no-repeat center center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
+  height: 100vh;
+  background: url('../../public/img/Banner1.png') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
   
   .overlay {
     background-color: rgba(0, 0, 0, 0.5); /* Sobreposição escura */

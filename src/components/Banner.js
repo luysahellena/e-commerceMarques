@@ -7,7 +7,7 @@ const Banner = () => {
   return (
     <section className="banner">
       <div className="overlay">
-        <h1 className="banner-title">Enjoy Time with Friends & Scotch Me!</h1>
+        <h1 className="banner-title">Beer's and Cheers for everyone! </h1>
         <p className="banner-subtitle">
           Descubra nossas melhores bebidas e aproveite cada momento.
         </p>
