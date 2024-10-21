@@ -1,6 +1,6 @@
 const products = [
-    { id: 1, name: 'Whisky Black Label', price: 199.99, image: 'https://via.placeholder.com/150' },
-    { id: 2, name: 'Chivas Regal', price: 149.99, image: 'https://via.placeholder.com/150' },
+    { id: 1, name: 'Whisky Black Label', price: 199.99, image: '/img/products/blacklabel.jpg' },
+    { id: 2, name: 'Chivas Regal', price: 149.99, image: '/img/products/chivas.jpg' },
     { id: 3, name: 'Jack Daniel\'s', price: 99.99, image: 'https://via.placeholder.com/150' },
     { id: 4, name: 'Jameson Irish Whiskey', price: 129.99, image: 'https://via.placeholder.com/150' },
     { id: 5, name: 'Johnnie Walker Red Label', price: 89.99, image: 'https://via.placeholder.com/150' },

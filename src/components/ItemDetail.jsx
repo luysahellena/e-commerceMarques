@@ -2,11 +2,10 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Card, Button, Container, Spinner } from 'react-bootstrap';
-import { toast } from 'react-toastify'; // Importando o toast
-import products from '../data/Products.js'; // Importando a lista de produtos
+import products from '../data/Products.jsx'; // Importando a lista de produtos
 
 const ItemDetail = ({ addToCart }) => {
-  const { id } = useParams();
+  const { id } = useParams(); // Pega o ID do produto da URL
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -26,7 +25,7 @@ const ItemDetail = ({ addToCart }) => {
 
   const handleAddToCart = () => {
     addToCart(product, 1);
-    toast.success(`${product.name} foi adicionado ao carrinho!`); // Exibe um toast
+    alert(`${product.name} foi adicionado ao carrinho!`);
   };
 
   if (loading) {
@@ -42,16 +41,23 @@ const ItemDetail = ({ addToCart }) => {
   }
 
   return (
-    <Card style={{ width: '24rem', margin: 'auto' }}>
-      <Card.Img variant="top" src={product.image} />
-      <Card.Body>
-        <Card.Title>{product.name}</Card.Title>
-        <Card.Text>R$ {product.price.toFixed(2)}</Card.Text>
-        <Button variant="success" onClick={handleAddToCart}>
-          Adicionar ao Carrinho
-        </Button>
-      </Card.Body>
-    </Card>
+    <Container className="mt-5">
+      <Card style={{ width: '24rem', margin: 'auto' }}>
+        <Card.Img 
+          variant="top" 
+          src={product.image} 
+          alt={product.name} 
+          onError={(e) => e.target.src = '/img/products/placeholder.png'} // Fallback se a imagem falhar
+        />
+        <Card.Body>
+          <Card.Title>{product.name}</Card.Title>
+          <Card.Text>R$ {product.price.toFixed(2)}</Card.Text>
+          <Button variant="success" onClick={handleAddToCart}>
+            Adicionar ao Carrinho
+          </Button>
+        </Card.Body>
+      </Card>
+    </Container>
   );
 };
 
