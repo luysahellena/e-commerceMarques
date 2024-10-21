@@ -58,7 +58,7 @@ e-commerce-marques/
    2. Acesse a pasta do projeto:
   
    ```bash
-   cd e-commerce-marques
+   cd e-commerceMarques
    ```
    3. Instale as dependências:
   
