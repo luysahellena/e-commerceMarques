@@ -21,7 +21,7 @@ const Cart = ({ cart, removeFromCart }) => {
 
   return (
     <Container className="mt-5">
-      <h2>Carrinho de Compras</h2>
+      <h2>Seus produtos</h2>
       <Table striped bordered hover>
         <thead>
           <tr>
