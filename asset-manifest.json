@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/e-commerceMarques/static/css/main.9af370ee.css",
+    "main.js": "/e-commerceMarques/static/js/main.e6bcc211.js",
+    "static/media/Banner1.png": "/e-commerceMarques/static/media/Banner1.ddaa8fc38610e64406a6.png",
+    "index.html": "/e-commerceMarques/index.html",
+    "main.9af370ee.css.map": "/e-commerceMarques/static/css/main.9af370ee.css.map",
+    "main.e6bcc211.js.map": "/e-commerceMarques/static/js/main.e6bcc211.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9af370ee.css",
+    "static/js/main.e6bcc211.js"
+  ]
+}
