@@ -1,8 +1,8 @@
 const products = [
-    { id: 1, name: 'Whisky Black Label', price: 199.99, image: '/img/products/blacklabel.jpg' },
-    { id: 2, name: 'Chivas Regal', price: 149.99, image: '/img/products/chivas.jpg' },
-    { id: 3, name: 'Jack Daniel\'s', price: 99.99, image: '/img/products/jack.jpg' },
-    { id: 4, name: 'Jameson Irish Whiskey', price: 129.99, image: '/img/products/jameson.jpg' },
+    { id: 1, name: 'Whisky Black Label', price: 199.99, image: '../img/products/blacklabel.jpg' },
+    { id: 2, name: 'Chivas Regal', price: 149.99, image: '../../public/img/products/chivas.jpg ' },
+    { id: 3, name: 'Jack Daniel\'s', price: 99.99, image: './img/products/jack.jpg' },
+    { id: 4, name: 'Jameson Irish Whiskey', price: 129.99, image: './img/products/jameson.jpg' },
     { id: 5, name: 'Johnnie Walker Red Label', price: 89.99, image: '/img/products/redlabel.jpg' },
     { id: 6, name: 'Bacardi Carta Blanca Rum', price: 79.99, image: '/img/products/bacardi.jpg' },
     { id: 7, name: 'Hennessy Cognac', price: 249.99, image: '/img/products/cognac.jpg' },
