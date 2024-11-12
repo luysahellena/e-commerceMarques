@@ -1,9 +1,12 @@
-// src/components/Cart.js
+// src/components/Cart.jsx
 import React from 'react';
 import { Table, Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useCart } from './CartContext';
 
-const Cart = ({ cart, removeFromCart }) => {
+const Cart = () => {
+  const { cart, removeFromCart } = useCart();
+
   const getTotalPrice = () => {
     return cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
   };
