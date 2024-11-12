@@ -1,9 +1,12 @@
-// src/components/Cart.jsx
 import React from 'react';
-import { Table, Button, Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Container, Table, Button } from 'react-bootstrap';
 import { useCart } from './CartContext';
 
+
+const handleCheckout = () => {
+  // Redirecionar para o link de checkout da Stripe
+  window.location.href = 'https://buy.stripe.com/test_00gdUggiZdhw18YbII'; // substitua pelo link de checkout da Stripe
+};
 const Cart = () => {
   const { cart, removeFromCart } = useCart();
 
@@ -15,7 +18,7 @@ const Cart = () => {
     return (
       <Container className="mt-5 text-center">
         <h2>Seu carrinho está vazio</h2>
-        <Button as={Link} to="/catalog" variant="primary">
+        <Button as="a" href="/catalog" variant="primary">
           Voltar ao Catálogo
         </Button>
       </Container>
@@ -55,7 +58,9 @@ const Cart = () => {
         </tbody>
       </Table>
       <h3>Total: R$ {getTotalPrice()}</h3>
-      <Button variant="success" className="mt-3">
+
+      {/* Botão de compra da Stripe */}
+      <Button variant="success" className="mt-3" onClick={handleCheckout}>
         Finalizar Compra
       </Button>
     </Container>
